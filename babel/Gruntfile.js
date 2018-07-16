@@ -8,12 +8,30 @@ module.exports = function (grunt) {
                 presets: ['env']
             },
             dist: {
-                files: {
-                    'lib/index.js': 'src/index.js'
-                }
+                files: [{
+                    expand: true,
+                    cwd: 'src/',
+                    src: ['*.js'],
+                    dest: 'dist/',
+                    ext:'.js'
+                }]
             }
+        },
+        browserify: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: 'dist/',
+                    src: 'index.js',
+                    dest: 'lib/',
+                    ext:'.js'
+                }]
+            }
+        },
+        clean: {
+            default: ['dist']
         }
     });
 
-    grunt.registerTask('default', ['babel']);
+    grunt.registerTask('default', ['babel', 'browserify', 'clean']);
 };

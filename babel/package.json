@@ -11,6 +11,8 @@
     "babel-preset-env": "^1.7.0",
     "grunt": "^1.0.3",
     "grunt-babel": "^7.0.0",
+    "grunt-browserify": "^5.3.0",
+    "grunt-contrib-clean": "^1.1.0",
     "load-grunt-tasks": "^4.0.0"
   },
   "scripts": {

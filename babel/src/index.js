@@ -1,11 +1,21 @@
+import Compute from "./compute.js"
+
+function showInBody(a) {
+	document.body.append(`${a}\n\r`);
+}
+
 for (let i = 0; i <= 3; i++) {
-	console.log(i);
+    showInBody(i);
 }
 var glo = {
-	name: 'sherry',
-	showname() {
-		console.log(this.name);
-	}
+    name: 'sherry',
+    showName() {
+        showInBody(this.name);
+    },
+    showAge() {
+        showInBody(Compute.add(1, 3));
+    }
 };
 
-glo.showname();
+glo.showName();
+glo.showAge();
