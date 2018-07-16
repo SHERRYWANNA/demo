@@ -4,12 +4,12 @@ module.exports = function (grunt) {
     grunt.initConfig({
         babel: {
             options: {
-                sourceMap: true,
+                sourceMap: false,
                 presets: ['env']
             },
             dist: {
                 files: {
-                    'src/index.js': 'lib/index.js'
+                    'lib/index.js': 'src/index.js'
                 }
             }
         }

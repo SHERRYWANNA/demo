@@ -4,7 +4,7 @@
 
 1. babel
 
-   介绍： babel demo，使用npm run build命令运行。
+   介绍： babel demo，npm install下载所需的包后，使用grunt default命令运行。
 
 2. compresspic（进行中,暂时只写了一个限定内存大小）
 
