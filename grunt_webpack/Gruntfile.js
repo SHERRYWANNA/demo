@@ -8,13 +8,28 @@ module.exports = function(grunt) {
             options: {
                 stats: !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
             },
-            prod: webpackConfig,
-            dev: Object.assign({ watch: true }, webpackConfig)
+            prod: "prodWebpackConfig",
+            dev: "devWebpackConfig"
         }
     });
 
     grunt.loadNpmTasks('grunt-webpack');
 
-    grunt.registerTask('build', ['webpack:prod']);
-    grunt.registerTask('default', ['webpack']);
+    grunt.registerTask('build', function(project) {
+        if (!project) {
+            grunt.warn('Need Project Name');
+            return;
+        }
+
+        var _webpackConfig = new webpackConfig(project),
+            _gruntConfig = grunt.config.data;
+
+        _gruntConfig.webpack.prod = _webpackConfig;
+        grunt.initConfig(_gruntConfig);
+        
+        grunt.task.run("webpack:prod");
+        // grunt.task.run("NODE_ENV=production grunt build");
+    });
+    grunt.registerTask('default');
+
 };
