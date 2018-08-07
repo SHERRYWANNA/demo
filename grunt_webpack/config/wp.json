@@ -1,0 +1,10 @@
+{
+	"compress": {
+		"js": {
+			"src": "wp/src/*"
+		}
+	},
+	"babel": {
+		"index": "wp/src/index.js"
+	}
+}

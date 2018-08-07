@@ -28,7 +28,6 @@ module.exports = function(grunt) {
         grunt.initConfig(_gruntConfig);
         
         grunt.task.run("webpack:prod");
-        // grunt.task.run("NODE_ENV=production grunt build");
     });
     grunt.registerTask('default');
 
