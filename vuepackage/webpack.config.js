@@ -1,38 +1,40 @@
-const path = require("path");
-const webpack = require("webpack");
- 
+const webpack = require('webpack');
+const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+
 module.exports = {
-    // devtool: 'source-map',
     entry: {
         index: path.resolve(__dirname, 'src/index.js')
-    },//入口文件，就是上步骤的src目录下的index.js文件，
+    }, //入口文件
     output: {
-        path: path.resolve(__dirname, './dist'),//输出路径，就是上步骤中新建的dist目录，
-        publicPath: path.resolve(__dirname, './dist'),
-        filename: 'helloMsg.min.js',
-        libraryTarget: 'umd',
-        umdNamedDefine: true
+        path: path.resolve(__dirname), 
+        filename: 'dist/[name].js'
     },
     module: {
-        rules: [{
-                test: /\.vue$/,
-                loader: 'vue-loader'
-            },
+        rules: [
             {
                 test: /\.js$/,
                 use: {
                     loader: 'babel-loader'
                 },
-                exclude: path.resolve(__dirname, 'node_modules'),
-                include: path.resolve(__dirname, 'src')
+                exclude: '/node_modules/'
+            },
+            {
+                test: /\.vue$/,
+                use: {
+                    loader: 'vue-loader'
+                },
+                exclude: '/node_modules/'
             }
         ]
     },
+    //插件
     plugins: [
         new webpack.DefinePlugin({
-            "process.env": {
-                NODE_ENV: JSON.stringify("production")
+            'process.env': {
+                NODE_ENV: '"production"'
             }
-        })
+        }),
+        new VueLoaderPlugin()
     ]
 };

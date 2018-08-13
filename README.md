@@ -20,7 +20,12 @@
 
    ​    可配置图片压缩至限定所占内存以下。（但无法准确的配置到固定内存大小）
 
-3. grunt-webpack动态配置路径（进行中）
+3. grunt-webpack动态配置路径
 
    介绍： grunt-webpack动态配置路径，适用于一个配置相对于多个项目的情况。
 
+   命令执行： grunt_webpack项目下npm install后运行NODE_ENV=production grunt build:(配置的文件名)，样例中的例子是wp.json，所以运行的命令是NODE_ENV=production grunt build:wp,成功在/project/wp/dist下产生相应js即成功。
+
+4. vue单文件组件（开发中）
+
+   介绍： 使用webpack+vue-loader不适用vue init跑出可上传的自定义npm包。

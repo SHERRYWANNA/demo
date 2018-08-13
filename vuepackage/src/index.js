@@ -1,2 +1,7 @@
-import Msg from './index.vue';
-export default Msg;
+import hello from "./app.vue";
+const getName = {
+	getName: () => 'sherry'
+};
+
+document.getElementsByTagName('body')[0].append(getName.getName());
+console.log(hello);
