@@ -14,19 +14,25 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                use: {
-                    loader: 'babel-loader'
-                },
+                loaders: [
+                    'babel-loader'
+                ],
                 exclude: '/node_modules/'
             },
             {
                 test: /\.vue$/,
-                use: {
-                    loader: 'vue-loader'
-                },
+                loaders: [
+                    'vue-loader',
+                    'vue-style-loader'
+                ],
                 exclude: '/node_modules/'
             }
         ]
+    },
+    resolve: {
+        alias: {
+            vue: 'vue/dist/vue.common.js'
+        }
     },
     //插件
     plugins: [

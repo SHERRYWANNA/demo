@@ -1,7 +1,9 @@
 import hello from "./app.vue";
-const getName = {
-	getName: () => 'sherry'
-};
+var Vue = require('vue');
 
-document.getElementsByTagName('body')[0].append(getName.getName());
-console.log(hello);
+var index = new Vue({
+	el: '.container',
+	components: {
+		'myname': hello
+	}
+});
