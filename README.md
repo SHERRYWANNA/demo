@@ -26,6 +26,11 @@
 
    命令执行： grunt_webpack项目下npm install后运行NODE_ENV=production grunt build:(配置的文件名)，样例中的例子是wp.json，所以运行的命令是NODE_ENV=production grunt build:wp,成功在/project/wp/dist下产生相应js即成功。
 
-4. vue单文件组件（开发中）
+4. vue单文件组件
 
-   介绍： 使用webpack+vue-loader不适用vue init跑出可上传的自定义npm包。
+   介绍： 使用webpack+vue-loader不适用vue init跑出单页面组件。
+
+   命令执行： vuepackage项目下npm install后运行
+   npm run server 跑起webpack-dev-server监听文件变动,没有添加自动打开浏览器配置，手动打开在页面上进入//localhost:8080/index.html访问生成的文件。
+   npm run dev 仅生成可调式的文件。
+   npm run build 生成正式文件。
