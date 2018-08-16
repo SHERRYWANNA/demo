@@ -3,6 +3,9 @@ var Vue = require('vue');
 
 var index = new Vue({
 	el: '.container',
+	data: {
+		name: 'sherry'
+	},
 	components: {
 		'myname': hello
 	}

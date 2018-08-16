@@ -22,10 +22,16 @@ module.exports = {
             {
                 test: /\.vue$/,
                 loaders: [
-                    'vue-loader',
-                    'vue-style-loader'
+                    'vue-loader'
                 ],
                 exclude: '/node_modules/'
+            },
+            {
+                test: /\.css$/,
+                loaders: [
+                    'style-loader',
+                    'css-loader'
+                ]
             }
         ]
     },
@@ -41,6 +47,19 @@ module.exports = {
                 NODE_ENV: '"production"'
             }
         }),
-        new VueLoaderPlugin()
-    ]
+        new VueLoaderPlugin(),
+        new webpack.HotModuleReplacementPlugin()
+    ],
+    devServer: {
+        clientLogLevel: 'warning',
+        historyApiFallback: true,
+        contentBase: path.resolve(__dirname),
+        hot: true,
+        inline: true,
+        compress: true,
+        // open: true,
+        host: 'localhost',
+        port: 8080
+    }
+
 };
