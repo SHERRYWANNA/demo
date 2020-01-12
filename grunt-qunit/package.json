@@ -1,0 +1,16 @@
+{
+  "name": "grunt-qunit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-qunit-istanbul": "^1.1.0",
+    "phantomjs": "^2.1.7"
+  }
+}
