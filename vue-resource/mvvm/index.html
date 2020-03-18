@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实现简单的mvvm</title>
+
+</head>
+<body>
+    <div class="app">
+        <p>my name is <b>{{ name }}</b></p>
+    </div>
+
+    <script src="mvvm.js"></script>
+
+    <script type="text/javascript">
+        let el = new Vue({
+            el: '.app',
+            data: {
+                name: '--'
+            }
+        });
+
+        setTimeout(() => {
+            el.data.name = 'sherry'
+        }, 1e3);
+
+        setTimeout(() => {
+            el.data.name = 'giant'
+        }, 2e3);
+    </script>
+</body>
+</html>

@@ -20,6 +20,8 @@
 
    ​    可配置图片压缩至限定所占内存以下。（但无法准确的配置到固定内存大小）
 
+   page: <https://sherrywanna.github.io/demo/compresspic/>
+
    ​
 
 3. grunt-webpack动态配置路径
@@ -42,3 +44,22 @@
 
       npm run build 生成正式文件。
 
+   ​
+
+5. vue-resource
+
+   介绍：vue源码简单实现
+
+   - mvvm
+
+     - 参考文献[50行代码的MVVM，感受闭包的艺术](https://juejin.im/post/5b1fa77451882513ea5cc2ca)
+
+     - 大概思路
+
+       - 编写 Observe 类为监听器，储存监听的变量相应的 nodeList 和 value，以及当变量更新时更新相应视图。
+       - 初始化 Vue 时遍历 data，为每个 data 变量初始化一个 Observe，并用 Object.defineProperty 设置 get set 方法，get 时调用 Observe 的添加 node 方法， set 时更新变量和视图。
+       - 从 el 开始遍历所有的 dom ，正则遇到{{}}则匹配中间的值，使用相应 get 方法添加该 node。
+
+     - page： <https://sherrywanna.github.io/demo/vue-resource/mvvm/>
+
+       ​
