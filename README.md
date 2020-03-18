@@ -60,6 +60,6 @@
        - 初始化 Vue 时遍历 data，为每个 data 变量初始化一个 Observe，并用 Object.defineProperty 设置 get set 方法，get 时调用 Observe 的添加 node 方法， set 时更新变量和视图。
        - 从 el 开始遍历所有的 dom ，正则遇到{{}}则匹配中间的值，使用相应 get 方法添加该 node。
 
-     - page： <https://sherrywanna.github.io/demo/vue-resource/mvvm/>
+     - page： <https://sherrywanna.github.io/demo/vue-resource/mvvm/index.html>
 
        ​
